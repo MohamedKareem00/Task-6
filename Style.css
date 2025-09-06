@@ -1,203 +1,248 @@
+/* Reset */
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 body {
-  background-color: #f6f6f6;
-  color: #222;
-  line-height: 1.5;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 1200px;
-}
-
-/* header  */
-header {
-  width: 100%;
-  max-width: 900px;
-  height: 300px;
-  margin: 0 auto;
-  /* padding: 0 10px; */
-  margin-top: 10px;
-  position: relative;
-  background-image: url(./photographer.jpg);
-  background-position: center;
-  background-size: cover;
-  margin-bottom: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.container {
-  display: inline-block;
-  border: 2px solid rgba(255 255 255 / 0.7);
-  padding: 8px 16px;
-  color: white;
-  width: fit-content;
-}
-.container h1 {
-  color: #f1f1f1;
-  /* letter-spacing: 0.15rem; */
-  font-weight: 500;
-  font-size: 28px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin: 5px 0;
-  text-align: center;
-  text-transform: uppercase;
-}
-.container p {
-  color: #f1f1f1;
-  letter-spacing: 0.10rem;
-  font-weight: 500;
-  font-size: 18px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin: 2px 0;
-  text-align: center;
-  /* text-transform: uppercase; */
-}
-
-/* navigation */
-nav {
-  width: 100%;
-  max-width: 360px;
+  margin: 0;
+  font-family: Arial, sans-serif;
   background-color: #f1f1f1;
-  color: #000000;
-  padding: 8px 16px;
-  /* padding: 20px 0; */
-  padding-bottom: 5px;
-  margin-bottom: 10px;
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  font-size: 15px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #333;
 }
-nav a {
-  color: #222;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
 }
-nav a:hover,
-nav a:focus {
-  color: #4a90e2;
-  outline: none;
+header {
+  position: relative;
+  text-align: center;
+  max-width: 100%;
+  margin: 0 auto;
 }
-
-/* Gallery container         تعديل كل الصور*/
-
-section {
-  width: 100;
-  max-width: 900px;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  /* padding: 70px ;
-  margin: 0 auto; */
-}
-div img {
+header img {
   width: 100%;
   height: auto;
+  max-height: 600px;
   display: block;
-  margin-bottom: 15px;
   object-fit: cover;
-  margin-bottom: 10px;
-  padding-left: 70px;
-  padding-right: 70px;
 }
-
-/* contact    تعديل الجزء الي تحت  */ 
-.contact-section {
-  background: #f1f1f1;
-  max-width: 766px;
-  margin-top: 10px;
-  padding-left: 70px;
-  padding-right: 70px;
+.header-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 24px;
+  border: 2px solid #ccc;
+  color: #ddd;
+  background: rgba(0, 0, 0, 0.4);
+  width: 50%;
+  max-width: 600px;
 }
-
-/* العنوان */
-.contact-section h2 {
-  text-align: center;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin: 10px 0px;
-  font-size: 24px;
+.header-text h1 {
+  font-size: 3.5rem;
+  margin: 0;
+  display: none;
 }
-
-/* النص */
-.contact-section p {
-  text-align: justify;
-  margin: 15px 0px;
-  font-size: 15px;
-  font-family: sans-serif;
-  /* margin-left: 15px;
-  margin-right: 15px; */
+.header-text h3 {
+  font-size: 2rem;
+  margin: 8px 0 0 0;
+  display: none;
 }
-
-/* الفورم */
-form {
+.header-text h5 {
+  font-size: 1.5rem;
+  margin: 0;
+  white-space: nowrap;
+  display: none;
+}
+.navbar-large {
+  position: absolute;
+  bottom: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #f1f1f1;
+  border-radius: 6px;
   display: flex;
-  flex-direction: column;
+  gap: 8px;
+  padding: 8px 16px;
+  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); */
+  z-index: 10;
 }
-
-label {
-  margin-top: 10px;
+.navbar-large a {
+  text-decoration: none;
+  color: #000;
+  padding: 8px 16px;
+  background-color: #eee;
+  border-radius: 4px;
   font-weight: bold;
+  transition: background-color 0.3s;
 }
-
-input,
+.navbar-large a:hover,
+.navbar-large a:focus {
+  background-color: #ccc;
+  outline: none;
+}
+.navbar-small {
+  background-color: #ddd;
+  padding: 16px 0;
+  text-align: center;
+  display: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.navbar-small a {
+  text-decoration: none;
+  color: #000;
+  padding: 8px 16px;
+  background-color: #eee;
+  border-radius: 4px;
+  font-weight: bold;
+  margin: 0 6px;
+  display: inline-block;
+  transition: background-color 0.3s;
+}
+.navbar-small a:hover,
+.navbar-small a:focus {
+  background-color: #ccc;
+  outline: none;
+}
+#portfolio img {
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
+  display: block;
+  margin: 24px auto 0 auto;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+#contact {
+  background-color: #ddd;
+  padding: 32px 24px;
+  margin-top: 32px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 8px;
+}
+#contact h3 {
+  text-align: center;
+  margin-top: 0;
+  font-size: 2rem;
+}
+#contact hr {
+  border: none;
+  border-top: 2px solid #bbb;
+  margin: 16px 0 24px 0;
+}
+#contact p {
+  max-width: 700px;
+  margin: 0 auto 24px auto;
+  line-height: 1.5;
+  font-size: 1rem;
+}
+form {
+  max-width: 700px;
+  margin: 0 auto;
+}
+.form-section {
+  margin-bottom: 16px;
+}
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+  font-size: 1rem;
+}
+input[type="text"],
+input[type="email"],
 textarea {
   width: 100%;
   padding: 10px;
-  margin-top: 5px;
-  border: 1px solid #ccc;
+  border: 1px solid #999;
   border-radius: 4px;
-  font-size: 14px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: #555;
 }
 textarea {
   height: 40px;
   resize: none;
 }
-
-/* زر الإرسال */
-button {
-  margin-top: 20px;
-  padding: 12px;
-  background: #555;
-  color: white;
+button[type="submit"] {
+  width: 100%;
+  background-color: #333;
+  color: #eee;
   border: none;
-  border-radius: 4px;
+  padding: 14px;
+  font-size: 1.1rem;
   cursor: pointer;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.3s;
 }
-
-button:hover {
-  background: #333;
+button[type="submit"]:hover,
+button[type="submit"]:focus {
+  background-color: #555;
+  outline: none;
 }
-
-/* النص السفلي */
-.powered {
-  margin-top: 20px;
+#contact p:last-child {
   text-align: center;
-  font-size: 14px;
+  margin-top: 24px;
+  font-size: 0.9rem;
 }
-
-.powered a {
-  color: #000;
+#contact a {
+  color: #4caf50;
   text-decoration: none;
 }
-
-
-@media (max-width: 768px) {
-  .container {
-    /* width: 100%; */
-    padding: 10px;
+#contact a:hover,
+#contact a:focus {
+  text-decoration: underline;
+  outline: none;
+}
+@media (min-width: 992px) {
+  .header-text h1,
+  .header-text h3 {
+    display: block;
+  }
+  .navbar-large {
+    display: flex;
+  }
+  .navbar-small {
+    display: none;
+  }
+}
+@media (max-width: 991px) {
+  .header-text h5 {
+    display: block;
+  }
+  .header-text h1,
+  .header-text h3 {
+    display: none;
+  }
+  .navbar-large {
+    display: none;
+  }
+  .navbar-small {
+    display: block;
   }
 }
 @media (max-width: 600px) {
-  .container {
-    font-size: 15px;
+  .header-text {
+    padding: 16px;
+    max-width: 90%;
+  }
+  #contact {
+    padding: 24px 16px;
+    max-width: 95%;
+  }
+  #portfolio img {
+    max-width: 100%;
+    margin: 16px auto 0 auto;
+  }
+  form {
+    max-width: 100%;
   }
 }
